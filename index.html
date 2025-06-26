@@ -28,7 +28,7 @@
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </nav>
-        <a class="nav-btn" onclick="openGmail()">Hire Me</a>
+        <a class="nav-btn delay-link" href="#" onclick="openGmail();return false;">Hire Me</a>
     </header>
     <main>
         <section class="hero" id="home">
@@ -168,16 +168,46 @@
     </main>
     <footer>
         <div class="social-links">
-            <a href="https://github.com/Kunhunni" class="social-link" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/anirudh-p-v-356b18281" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://twitter.com/anirudhrajeev11" class="social-link" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://dribbble.com/anirudh-p--v" class="social-link" target="_blank" rel="noopener" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
-            <a href="https://wa.me/919778047213" class="social-link" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <a href="https://github.com/Kunhunni" class="social-link ext-link" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/anirudh-p-v-356b18281" class="social-link ext-link" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://twitter.com/anirudhrajeev11" class="social-link ext-link" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://dribbble.com/anirudh-p--v" class="social-link ext-link" target="_blank" rel="noopener" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+            <a href="https://wa.me/919778047213" class="social-link ext-link" target="_blank" rel="noopener" aria-label="WhatsApp">
                 <i class="fab fa-whatsapp"></i>
             </a>
         </div>
         <p class="copyright">© 2025 Anirudh. All rights reserved.</p>
     </footer>
+    <script>
+    // Add delay for external links to show hover/tap animation on mobile
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('a.ext-link').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          if (window.innerWidth <= 900) {
+            e.preventDefault();
+            const url = this.href;
+            this.classList.add('clicked-delay');
+            setTimeout(() => { window.open(url, '_blank'); this.classList.remove('clicked-delay'); }, 700);
+          }
+        });
+      });
+      // Add delay for Hire Me button
+      var hireBtn = document.querySelector('.nav-btn.delay-link');
+      if(hireBtn) {
+        // Remove previous click listeners to avoid stacking
+        hireBtn.onclick = null;
+        hireBtn.addEventListener('click', function(e) {
+          if (window.innerWidth <= 900) {
+            e.preventDefault();
+            this.classList.add('clicked-delay');
+            setTimeout(() => { openGmail(); this.classList.remove('clicked-delay'); }, 700);
+          } else {
+            openGmail();
+          }
+        });
+      }
+    });
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" defer></script>
