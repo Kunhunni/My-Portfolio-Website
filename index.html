@@ -1,27 +1,23 @@
+<!-- This is my personal portfolio site. Please optimize the code without changing layout, animations, or functionality. -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anirudh P V</title>
-    <!-- Prevent forced color scheme on some browsers -->
     <meta name="color-scheme" content="only">
-    <!-- SEO & Social -->
     <meta name="description" content="Anirudh P V - Creative Full Stack Developer Portfolio. Building immersive digital experiences with modern tech.">
     <meta property="og:title" content="Anirudh P V Portfolio">
     <meta property="og:description" content="Creative developer building immersive digital experiences.">
     <meta property="og:image" content="link-to-your-preview-image.jpg"><!-- TODO: Add your preview image -->
     <meta property="og:type" content="website">
-    <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
 </head>
 <body class="no-js">
-    <!-- 3D Background Container (Vanta.js) -->
     <div id="vanta-bg" aria-hidden="true"></div>
-    
-    <!-- Header -->
     <header>
         <div class="logo Anirudh_Logo" id="main-logo" tabindex="0" aria-label="Homepage, click to refresh"></div>
         <nav aria-label="Main Navigation">
@@ -34,9 +30,7 @@
         </nav>
         <a class="nav-btn" onclick="openGmail()">Hire Me</a>
     </header>
-    
     <main>
-        <!-- Hero Section -->
         <section class="hero" id="home">
             <h1 class="animate-on-scroll">ANIRUDH P V <span>Full Stack Developer</span></h1>
             <p class="animate-on-scroll">I build immersive digital experiences that blend cutting-edge technology with stunning design to create meaningful user interactions.</p>
@@ -45,13 +39,10 @@
                 <a class="btn btn-secondary" href="Anirudh_CV.pdf" download>Download CV</a>
             </div>
         </section>
-        
-        <!-- Projects Section -->
         <section id="projects" class="projects">
             <h2 class="section-title animate-on-scroll">My PROJECTS</h2>
             <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card animate-on-scroll">
+                <article class="project-card animate-on-scroll">
                     <div class="project-card-inner">
                         <div class="project-card-front">
                             <div class="project-img" aria-label="E-commerce Platform screenshot"></div>
@@ -63,7 +54,6 @@
                                     <span class="tag">Node.js</span>
                                     <span class="tag">MongoDB</span>
                                 </div>
-                                <!-- Removed initial View Details link -->
                             </div>
                         </div>
                         <div class="project-card-back">
@@ -72,9 +62,8 @@
                             <a href="https://github.com/Kunhunni" class="back-link" target="_blank" rel="noopener">View Details (Coming Soon)<i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                </div>
-                <!-- Project 2 -->
-                <div class="project-card animate-on-scroll">
+                </article>
+                <article class="project-card animate-on-scroll">
                     <div class="project-card-inner">
                         <div class="project-card-front">
                             <div class="project-img" aria-label="Financial Dashboard screenshot"></div>
@@ -86,7 +75,6 @@
                                     <span class="tag">D3.js</span>
                                     <span class="tag">Firebase</span>
                                 </div>
-                                <!-- Removed initial View Details link -->
                             </div>
                         </div>
                         <div class="project-card-back">
@@ -95,9 +83,8 @@
                             <a href="https://github.com/Kunhunni" class="back-link" target="_blank" rel="noopener">View Details (Coming Soon)<i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                </div>
-                <!-- Project 3 -->
-                <div class="project-card animate-on-scroll">
+                </article>
+                <article class="project-card animate-on-scroll">
                     <div class="project-card-inner">
                         <div class="project-card-front">
                             <div class="project-img" aria-label="Travel App screenshot"></div>
@@ -109,7 +96,6 @@
                                     <span class="tag">GraphQL</span>
                                     <span class="tag">AWS</span>
                                 </div>
-                                <!-- Removed initial View Details link -->
                             </div>
                         </div>
                         <div class="project-card-back">
@@ -118,42 +104,34 @@
                             <a href="https://github.com/Kunhunni" class="back-link" target="_blank" rel="noopener">View Details (Coming Soon)<i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
         </section>
-        
-        <!-- Skills Section -->
         <section id="skills" class="skills">
             <h2 class="section-title animate-on-scroll">TECHNICAL SKILLS</h2>
             <div class="skills-container">
-                <!-- Skill 1 -->
-                <div class="skill-card animate-on-scroll">
+                <article class="skill-card animate-on-scroll">
                     <div class="skill-icon"><i class="fab fa-react"></i></div>
                     <h3 class="skill-title">Frontend Development</h3>
                     <p class="skill-desc">React, Vue, Angular, JavaScript, TypeScript, HTML5, CSS3, Sass, Tailwind</p>
-                </div>
-                <!-- Skill 2 -->
-                <div class="skill-card animate-on-scroll">
+                </article>
+                <article class="skill-card animate-on-scroll">
                     <div class="skill-icon"><i class="fas fa-server"></i></div>
                     <h3 class="skill-title">Backend Development</h3>
                     <p class="skill-desc">Node.js, Express, Django, Ruby on Rails, REST APIs, GraphQL, MongoDB, PostgreSQL</p>
-                </div>
-                <!-- Skill 3 -->
-                <div class="skill-card animate-on-scroll">
+                </article>
+                <article class="skill-card animate-on-scroll">
                     <div class="skill-icon"><i class="fas fa-mobile-alt"></i></div>
                     <h3 class="skill-title">Mobile Development</h3>
                     <p class="skill-desc">React Native, iOS Swift, Android Kotlin, Progressive Web Apps</p>
-                </div>
-                <!-- Skill 4 -->
-                <div class="skill-card animate-on-scroll">
+                </article>
+                <article class="skill-card animate-on-scroll">
                     <div class="skill-icon"><i class="fas fa-paint-brush"></i></div>
                     <h3 class="skill-title">UI/UX Design</h3>
                     <p class="skill-desc">Figma, Adobe XD, User Research, Wireframing, Prototyping, Interaction Design</p>
-                </div>
+                </article>
             </div>
         </section>
-        
-        <!-- About Section -->
         <section id="about" class="about">
             <div class="about-img animate-on-scroll">
                 <div class="img-placeholder" aria-label="About Me photo"></div>
@@ -166,15 +144,12 @@
                 <a class="btn btn-primary" href="#contact">Learn More</a>
             </div>
         </section>
-        <!-- Modal for About Me image -->
         <div id="about-modal">
             <div class="modal-img-container">
                 <button class="close-btn" aria-label="Close">&times;</button>
                 <img src="About Me.png" alt="About Me Full" />
             </div>
         </div>
-        
-        <!-- Contact Section -->
         <section id="contact" class="contact">
             <h2 class="section-title animate-on-scroll">GET IN TOUCH</h2>
             <form class="contact-form animate-on-scroll" action="https://formspree.io/f/xeokpgrn" method="POST">
@@ -191,8 +166,6 @@
             </form>
         </section>
     </main>
-    
-    <!-- Footer -->
     <footer>
         <div class="social-links">
             <a href="https://github.com/Kunhunni" class="social-link" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -205,7 +178,6 @@
         </div>
         <p class="copyright">© 2025 Anirudh. All rights reserved.</p>
     </footer>
-    <!-- Scripts (deferred for performance) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" defer></script>

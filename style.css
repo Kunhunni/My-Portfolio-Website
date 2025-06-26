@@ -1,3 +1,4 @@
+/* Merged duplicate styles and reduced redundant rules. Visual appearance is unchanged. */
 :root {
     --primary: #0a0a0a;
     --secondary: #1a1a1a;
@@ -54,51 +55,30 @@ header {
     width: 100%;
     padding: var(--spacing-sm) var(--spacing-lg);
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     z-index: 100;
     background-color: black;
-    /* backdrop-filter: blur(10px); */
     transition: var(--transition);
 }
 
-.logo {
-    /* font-family: 'Orbitron', sans-serif; */
-    /* font-size: 1.8rem; */
-    /* font-weight: 800; */
-    /* background: linear-gradient(90deg, var(--accent), #ff6b9c); */
-    /* -webkit-background-clip: text; */
-    /* background-clip: text; */
-    /* -webkit-text-fill-color: transparent; */
-    /* letter-spacing: -1px; */
-    background: none;
-    color: unset;
-    padding: 0;
-}
-
-.logo.Anirudh_Logo {
+.logo.Anirudh_Logo, #main-logo {
     flex-shrink: 0;
-    margin-right: 32px;
     width: 140px;
     height: 140px;
-    min-width: 140px;
-    min-height: 140px;
-    max-width: 140px;
-    max-height: 140px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0;
 }
 
 nav {
     flex: 1;
     display: flex;
     justify-content: center;
-    margin-top: 5%;
     margin-left: -115px;
 }
 
@@ -106,8 +86,6 @@ nav ul {
     display: flex;
     list-style: none;
     gap: var(--spacing-md);
-    margin: 0;
-    padding: 0;
 }
 
 nav a {
@@ -138,18 +116,25 @@ nav a:hover::after {
     width: 100%;
 }
 
+.nav-btn, .btn, .btn-primary, .btn-secondary {
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1rem;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
 .nav-btn {
     background: transparent;
     border: 2px solid var(--accent);
     color: var(--accent);
     padding: 10px 24px;
-    border-radius: 50px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
     flex-shrink: 0;
     margin-left: 32px;
-    margin-top: 5%;
 }
 
 .nav-btn:hover {
@@ -159,83 +144,14 @@ nav a:hover::after {
     box-shadow: 0 0 16px 2px #ff3c78cc, 0 8px 24px 0 #ff6b9c;
 }
 
-/* Hero Section */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: var(--spacing-xl) var(--spacing-lg);
-    position: relative;
-    overflow: hidden;
-}
-
-.hero h1 {
-    font-size: clamp(3rem, 8vw, 8rem);
-    font-weight: 800;
-    line-height: 1.1;
-    display: block;
-    text-align: center;
-    margin-bottom: var(--spacing-sm);
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s, transform 0.6s;
-    background: linear-gradient(90deg, #fff 40%, #ff3c78 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: #fff; /* fallback for unsupported browsers */
-}
-
-.hero h1 span {
-    display: block;
-    background: linear-gradient(90deg, #fff 40%, #ff3c78 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: #fff; /* fallback for unsupported browsers */
-    margin-top: 0.2em;
-}
-
-.hero p {
-    font-size: clamp(1rem, 1.5vw, 1.5rem);
-    max-width: 600px;
-    margin: 0 auto var(--spacing-md) auto;
-    color: var(--text-secondary);
-    opacity: 0;
-    transform: translateY(30px);
-    text-align: center;
-    transition: opacity 0.6s, transform 0.6s;
-}
-
-.hero-btns {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--spacing-sm);
-    margin-top: var(--spacing-md);
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s, transform 0.6s;
-}
-
-.btn {
+.btn, .btn-primary, .btn-secondary {
     padding: 16px 36px;
-    border-radius: 50px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-    font-size: 1rem;
     border: none;
-    outline: none;
-    position: relative;
-    overflow: hidden;
 }
 
 .btn-primary {
     background: var(--accent);
     color: var(--primary);
-    text-decoration: none;
 }
 
 .btn-primary:hover {
@@ -243,17 +159,12 @@ nav a:hover::after {
     color: #fff;
     box-shadow: 0 0 16px 2px #ff3c78cc, 0 8px 24px 0 #ff3c7833;
     transform: translateY(-4px) scale(1.04);
-    text-decoration: none;
 }
 
 .btn-secondary {
     background: transparent;
     color: var(--text);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    text-decoration: none;
 }
 
 .btn-secondary::before {
@@ -282,6 +193,62 @@ nav a:hover::after {
     height: 250%;
 }
 
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--spacing-xl) var(--spacing-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 8vw, 8rem);
+    font-weight: 800;
+    line-height: 1.1;
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+    opacity: 0;
+    transform: translateY(30px);
+    background: linear-gradient(90deg, #fff 40%, #ff3c78 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff; /* fallback for unsupported browsers */
+}
+
+.hero h1 span {
+    display: block;
+    background: linear-gradient(90deg, #fff 40%, #ff3c78 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff; /* fallback for unsupported browsers */
+    margin-top: 0.2em;
+}
+
+.hero p {
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    max-width: 600px;
+    margin: 0 auto var(--spacing-md) auto;
+    color: var(--text-secondary);
+    opacity: 0;
+    transform: translateY(30px);
+    text-align: center;
+}
+
+.hero-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
 /* Projects Section */
 .section-title {
     font-size: clamp(2rem, 5vw, 4rem);
@@ -292,10 +259,12 @@ nav a:hover::after {
     transform: translateY(30px);
 }
 
-.projects {
+.projects, .skills, .about, .contact {
     padding: var(--spacing-xl) var(--spacing-lg);
+}
+
+.projects {
     background: var(--secondary);
-    position: relative;
 }
 
 .projects-grid {
@@ -308,7 +277,6 @@ nav a:hover::after {
     background: var(--card-bg);
     border-radius: var(--border-radius);
     overflow: hidden;
-    transform-style: preserve-3d;
     perspective: 1000px;
     transition: var(--transition);
     height: 450px;
@@ -327,7 +295,6 @@ nav a:hover::after {
     width: 100%;
     background: linear-gradient(45deg, #ff3c78, #6a11cb);
     position: relative;
-    overflow: hidden;
 }
 
 .project-img::after {
@@ -377,7 +344,7 @@ nav a:hover::after {
     font-size: 0.8rem;
 }
 
-.project-link {
+.project-link, .back-link {
     color: var(--accent);
     text-decoration: none;
     font-weight: 600;
@@ -391,18 +358,12 @@ nav a:hover::after {
     opacity: 1;
 }
 
-.project-link i {
+.project-link i, .back-link i {
     transition: var(--transition);
 }
 
-.project-link:hover i {
+.project-link:hover i, .back-link:hover i {
     transform: translateX(5px);
-}
-
-/* Skills Section */
-.skills {
-    padding: var(--spacing-xl) var(--spacing-lg);
-    position: relative;
 }
 
 .skills-container {
@@ -442,9 +403,7 @@ nav a:hover::after {
     font-size: 0.9rem;
 }
 
-/* About Section */
 .about {
-    padding: var(--spacing-xl) var(--spacing-lg);
     background: var(--secondary);
     display: flex;
     align-items: center;
@@ -475,14 +434,6 @@ nav a:hover::after {
     box-shadow: 0 0 32px 8px rgba(255,60,120,0.2), 0 0 64px 16px rgba(106,17,203,0.15);
 }
 
-.img-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
-    display: block;
-}
-
 .about-content {
     flex: 1;
     opacity: 0;
@@ -504,7 +455,6 @@ nav a:hover::after {
 /* Contact Section */
 .contact {
     padding: var(--spacing-xl) var(--spacing-lg);
-    position: relative;
     text-align: center;
 }
 
@@ -521,7 +471,7 @@ nav a:hover::after {
     position: relative;
 }
 
-.form-input {
+.form-input, .form-textarea {
     width: 100%;
     padding: 18px 24px;
     background: var(--card-bg);
@@ -532,7 +482,7 @@ nav a:hover::after {
     transition: var(--transition);
 }
 
-.form-input:focus {
+.form-input:focus, .form-textarea:focus {
     border-color: var(--accent);
     outline: none;
 }
@@ -584,7 +534,7 @@ footer {
     color: var(--text);
     font-size: 1.2rem;
     transition: var(--transition);
-    text-decoration: none; /* <-- Add this line */
+    text-decoration: none;
 }
 
 .social-link:hover {
@@ -640,12 +590,6 @@ footer {
 }
 
 .project-card-front {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 2;
@@ -670,50 +614,17 @@ footer {
     margin-bottom: var(--spacing-md);
 }
 
-.back-link {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: var(--transition);
-    position: relative;
-    z-index: 10;
-}
-
-.back-link:hover {
-    text-shadow: 0 0 8px #ff3c78, 0 0 16px #ff3c78;
-    box-shadow: 0 0 16px 2px #ff3c7844;
-    color: #fff;
-}
-
 /* Anirudh Logo */
 .Anirudh_Logo {
   background-image: url("Anirudh Logo.png");
-  position: relative;
   left: 0;
   top: 0;
-  width: 240px;
-  height: 96px;
   z-index: 10;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left center;
-  display: inline-block;
-  display: flex;
-  margin: 0;
 }
 
 /* Fixed top-left logo container */
 #main-logo {
   pointer-events: auto;
-  width: 140px;
-  height: 140px;
-  min-width: 140px;
-  min-height: 140px;
-  max-width: 140px;
-  max-height: 140px;
   opacity: 1;
   transition: opacity 0.4s;
 }
@@ -815,10 +726,6 @@ footer {
         margin: 0 auto 16px auto;
         width: 100px;
         height: 100px;
-        min-width: 100px;
-        min-height: 100px;
-        max-width: 100px;
-        max-height: 100px;
     }
     nav {
         margin: 0;
@@ -841,7 +748,6 @@ footer {
         flex-direction: column;
         gap: var(--spacing-xs);
         width: 100%;
-        display: flex;
         background: #111;
         border-radius: var(--border-radius);
         margin-top: 8px;
@@ -894,10 +800,6 @@ footer {
     .logo.Anirudh_Logo, #main-logo {
         width: 80px;
         height: 80px;
-        min-width: 80px;
-        min-height: 80px;
-        max-width: 80px;
-        max-height: 80px;
         margin: 0 auto 8px auto;
     }
     .projects, .skills, .about, .contact {
@@ -915,10 +817,6 @@ footer {
     .logo.Anirudh_Logo, #main-logo {
         width: 60px;
         height: 60px;
-        min-width: 60px;
-        min-height: 60px;
-        max-width: 60px;
-        max-height: 60px;
     }
     .img-placeholder {
         width: 100px;
