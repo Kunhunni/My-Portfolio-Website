@@ -786,7 +786,7 @@ footer {
 
 @media (max-width: 768px) {
     .project-card {
-        height: 320px; /* Ensure fixed height for flip effect */
+        height: 660px; /* Ensure fixed height for flip effect */
         min-height: 320px;
         width: 100%;
         margin-bottom: 24px;
